@@ -1,5 +1,6 @@
 [project]
-name = "edgekit-audit"version = "1.0.0"
+name = "edgekit-audit"
+version = "1.0.0"
 description = "Decide whether an LLM fits on a specific machine — RAM headroom, KV-cache, quant mix, a run plan."
 readme = "README.md"
 requires-python = ">=3.10"
