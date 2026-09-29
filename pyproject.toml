@@ -1,0 +1,37 @@
+[project]
+name = "edgekit-audit"version = "1.0.0"
+description = "Decide whether an LLM fits on a specific machine — RAM headroom, KV-cache, quant mix, a run plan."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Jay420kk" }]
+keywords = ["llm", "gguf", "edge", "quantization", "kv-cache", "inference", "memory"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: System :: Hardware",
+]
+
+# No dependencies. The tool reads a binary file header and does arithmetic on
+# this machine's own resources — anything it needed to install would be one
+# more thing that can be absent on the laptop you are trying to size.
+dependencies = []
+
+[project.scripts]
+edgekit = "edgekit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Jay420kk/edgekit"
+Issues = "https://github.com/Jay420kk/edgekit/issues"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["edgekit"]
